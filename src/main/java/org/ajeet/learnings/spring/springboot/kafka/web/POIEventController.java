@@ -1,5 +1,7 @@
-package org.ajeet.learnings.spring.springboot;
+package org.ajeet.learnings.spring.springboot.kafka.web;
 
+import org.ajeet.learnings.spring.springboot.kafka.POIEventProducer;
+import org.ajeet.learnings.spring.springboot.model.POI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,22 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/kafka")
-public final class RSVPEventController {
-    private final Logger LOG = LoggerFactory.getLogger(RSVPEventController.class);
-
-    private final RSVPEventProducer producer;
+public final class POIEventController {
+    private final Logger LOG = LoggerFactory.getLogger(POIEventController.class);
 
     @Autowired
-    RSVPEventController(RSVPEventProducer producer) {
-        this.producer = producer;
-    }
+    private POIEventProducer rsvpEventProducer;
 
 
     @RequestMapping(value = "/publish",
             method = RequestMethod.POST,
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    public void sendMessageToKafkaTopic(@RequestBody String rsvpEvent) {
-        this.producer.sendMessage(rsvpEvent);
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void sendMessageToKafkaTopic(@RequestBody POI pointOfInterest) {
+        this.rsvpEventProducer.sendMessage(pointOfInterest);
     }
 }

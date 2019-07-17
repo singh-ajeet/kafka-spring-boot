@@ -1,4 +1,4 @@
-package org.ajeet.learnings.spring.springboot;
+package org.ajeet.learnings.spring.springboot.kafka;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

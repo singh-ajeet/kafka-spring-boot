@@ -26,10 +26,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+//	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation 'org.apache.avro:avro:version:1.9.0'
-	implementation 'io.confluentio.confluent:kafka-avro-serializer:version:3.3.1'
+//	implementation 'io.confluentio.confluent:kafka-avro-serializer:version:3.3.1'
 //	implementation 'io.confluentio.confluent:kafka-schema-registry:version:4.1.0'
 
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
