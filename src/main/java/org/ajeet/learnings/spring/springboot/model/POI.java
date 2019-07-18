@@ -36,6 +36,10 @@ public final class POI {
         return description;
     }
 
+    public POI_Type getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
         return "POI[" +

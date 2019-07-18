@@ -17,7 +17,7 @@ public final class POIEventController {
     private final Logger LOG = LoggerFactory.getLogger(POIEventController.class);
 
     @Autowired
-    private POIEventProducer rsvpEventProducer;
+    private POIEventProducer poiEventProducer;
 
 
     /**
@@ -30,6 +30,6 @@ public final class POIEventController {
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public void sendMessageToKafkaTopic(@RequestBody POI pointOfInterest) {
-        this.rsvpEventProducer.sendMessage(pointOfInterest);
+        this.poiEventProducer.sendMessage(pointOfInterest);
     }
 }
