@@ -20,6 +20,12 @@ public final class POIEventController {
     private POIEventProducer rsvpEventProducer;
 
 
+    /**
+     * Post request url: http://localhost:8080/poi/kafka/publish
+     * Example of request body: {"longitude":77.100281, "latitude": 28.556160, "type": "Airport", "description": "Indira Gandhi International Airport New Delhi"}
+     *
+     * @param pointOfInterest
+     */
     @RequestMapping(value = "/publish",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)

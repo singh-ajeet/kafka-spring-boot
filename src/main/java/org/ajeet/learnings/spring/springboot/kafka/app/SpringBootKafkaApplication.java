@@ -17,9 +17,9 @@ public class SpringBootKafkaApplication {
 
 	/**
 	 * We are using a StringDeserializer in kafka consumer properties
-	 *  And this convertor is converting the message from string to required type.
+	 *  And this converter is converting the message from string to required type.
 	 *
-	 * @return
+	 * @return RecordMessageConverter
 	 */
 	@Bean
 	public RecordMessageConverter converter() {
